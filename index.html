@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Automate Desktop Training by Deenu | automatewithdeenu</title>
+    <title>Power Automate Desktop Training by Deenuji Loganathan | Usecase Based Training</title>
     <style>
         * {
             margin: 0;
@@ -12,11 +12,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: #1a202c;
+            background: #ffffff;
         }
 
         .container {
@@ -27,13 +26,13 @@
 
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .header-content {
@@ -43,328 +42,861 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #6366f1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .brand-subtitle {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #2563eb;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
             padding: 12px 24px;
             border: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 100px 0;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
+            display: inline;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .hero h1 {
+        .hero-text h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+            color: #1e293b;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
         }
 
-        .hero .subtitle {
+        .hero-text .highlight {
+            color: #2563eb;
+        }
+
+        .hero-text .subtitle {
             font-size: 1.3rem;
+            color: #475569;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            line-height: 1.5;
         }
 
         .hero-stats {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-top: 3rem;
+            margin: 3rem 0;
         }
 
-        .stat {
+        .stat-item {
             text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .stat-number {
             font-size: 2.5rem;
-            font-weight: bold;
+            font-weight: 800;
+            color: #2563eb;
             display: block;
         }
 
         .stat-label {
-            opacity: 0.8;
+            color: #64748b;
+            font-weight: 500;
         }
 
-        /* Program Info */
-        .program-info {
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trainer-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #64748b;
+            border: 6px solid white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .credentials {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            white-space: nowrap;
+        }
+
+        /* Why PAD Section */
+        .why-pad {
             background: white;
             padding: 80px 0;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
             font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d3748;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .info-card {
-            background: linear-gradient(135deg, #f7fafc, #edf2f7);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .info-card h3 {
-            color: #6366f1;
+            font-weight: 800;
+            color: #1e293b;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
 
-        /* Modules Section */
-        .modules {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            padding: 80px 0;
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .modules-grid {
+        .advantages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
-        .module-card {
-            background: white;
+        .advantage-card {
+            background: #f8fafc;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .module-card::before {
-            content: '';
+        .advantage-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .advantage-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .advantage-text {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Trainer Section */
+        .trainer-section {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .trainer-content {
+            display: inline;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .trainer-image-section {
+            text-align: center;
+        }
+
+        .trainer-details h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .trainer-title {
+            font-size: 1.3rem;
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .trainer-bio {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .trainer-achievements {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .trainer-achievements li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .trainer-achievements li::before {
+            content: '✓';
             position: absolute;
-            top: 0;
             left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-link {
+            background: #25D366 !important;
+        }
+
+        .whatsapp-link:hover {
+            background: #128C7E !important;
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .curriculum-overview {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .module-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .module-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .module-number {
-            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .module-title {
-            color: #2d3748;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.3;
         }
 
         .module-topics {
             list-style: none;
         }
 
-        .module-topics li {
-            padding: 0.3rem 0;
-            color: #4a5568;
-            position: relative;
-            padding-left: 1rem;
+        .topic-section {
+            margin-bottom: 1.5rem;
         }
 
-        .module-topics li::before {
-            content: '✓';
+        .topic-title {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-items {
+            list-style: none;
+            margin-left: 1rem;
+        }
+
+        .topic-items li {
+            padding: 0.3rem 0;
+            color: #475569;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .topic-items li::before {
+            content: '•';
             position: absolute;
             left: 0;
-            color: #48bb78;
+            color: #10b981;
             font-weight: bold;
         }
 
-        /* Learning Method */
-        .learning-method {
+        /* Learning Experience */
+        .learning-experience {
             background: white;
             padding: 80px 0;
         }
 
-        .method-grid {
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .experience-text {
+            color: #475569;
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .schedule-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
-        .method-item {
-            text-align: center;
+        .schedule-item {
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
         }
 
-        .method-item:hover {
-            transform: scale(1.05);
-        }
-
-        .method-icon {
+        .schedule-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        /* Pricing */
-        .pricing {
-            background: linear-gradient(135deg, #2d3748, #1a202c);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+        .schedule-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
-        .price-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+        .schedule-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .pricing-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
             padding: 3rem;
             border-radius: 20px;
-            max-width: 500px;
-            margin: 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-header {
+            margin-bottom: 2rem;
         }
 
         .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #ffd700;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
         }
 
-        .price-details {
+        .price-subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .pricing-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
         }
 
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Contact */
-        .contact {
+        .pricing-item {
             background: white;
-            padding: 80px 0;
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
         }
 
-        .trainer-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #f7fafc, #edf2f7);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .pricing-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-links {
+        .pricing-value {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.1rem;
+        }
+
+        .enrollment-buttons {
             display: flex;
-            justify-content: center;
             gap: 1rem;
+            justify-content: center;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .contact-link {
-            padding: 10px 20px;
+        .syllabus-button {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .syllabus-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Payment Options Section */
+        .payment-options {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .payment-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .payment-option {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .payment-option:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .option-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .option-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .option-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .option-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+            color: #475569;
+        }
+
+        .option-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .option-button {
+            width: 100%;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .topmate-button {
             background: #6366f1;
             color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
         }
 
-        .contact-link:hover {
+        .topmate-button:hover {
             background: #4f46e5;
             transform: translateY(-2px);
+        }
+
+        /* Terms Section */
+        .terms-section {
+            background: #f8fafc;
+            padding: 60px 0;
+        }
+
+        .terms-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .terms-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .terms-title {
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .terms-list {
+            list-style: none;
+        }
+
+        .terms-list li {
+            padding: 0.5rem 0;
+            color: #475569;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .terms-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .payment-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .payment-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step-text {
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Footer */
         .footer {
             background: #1a202c;
             color: white;
-            text-align: center;
-            padding: 2rem 0;
+            padding: 60px 0 30px;
         }
 
-        /* Responsive */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #2563eb;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .modules-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .method-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            .trainer-photo,
+            .photo-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .trainer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-details {
+                grid-template-columns: 1fr;
+            }
+
+            .enrollment-buttons {
+                flex-direction: column;
+            }
+
+            .payment-comparison {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -381,10 +913,9 @@
         }
 
         .fade-in {
-            animation: fadeInUp 0.6s ease-out;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Scroll animations */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -395,6 +926,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .highlight-important {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #f59e0b;
+            margin: 2rem 0;
+        }
     </style>
 </head>
 <body>
@@ -402,8 +941,19 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">Automate With Deenu</div>
-                <a href="https://topmate.io/deenuji_loganathan/1647144" target="_blank" class="cta-button">Enroll Now - ₹22,000</a>
+                <div class="logo">
+                    <div>
+                        <div class="brand-text">AutomateWithDeenu</div>
+                      
+                    </div>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#why-pad" class="nav-link">Why PAD</a>
+                    <a href="#trainer" class="nav-link">Trainer</a>
+                    <a href="#curriculum" class="nav-link">Curriculum</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="https://wa.me/+918618169205?text=Hi%20Deenu%2C%20I%27m%20interested%20in%20the%20Power%20Automate%20Desktop%20training%20program.%20Could%20you%20please%20share%20the%20payment%20details%3F" target="_blank" class="cta-button">💬 Contact for enrollment</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -412,222 +962,640 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>Master Power Automate Desktop</h1>
-                <p class="subtitle">6-Week Intensive RPA Training Program</p>
-                <p>Learn from <strong>Deenuji Loganathan</strong> - Top PAD Community Champion & Certified Expert</p>
-                
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">Weeks</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Live Sessions</span>
-                    </div>
+                <div class="hero-text">
+                    <h1>Master <span class="highlight">Power Automate Desktop</span> with Industry Expert</h1>
+                    <p class="subtitle">6-Week Intensive RPA Training Program by Deenuji Loganathan</p>
                     
-                </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Weeks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Live Sessions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">9th</span>
+                            <span class="stat-label">Aug Training Begins</span>
+                        </div>
+
+                        <div class="stat-item" style="color: #2563eb;align-content: center;font-size: 23px;font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;font-weight: bolder;font-style: oblique;">
+                            <a target="_blank" href="https://yh7dc-my.sharepoint.com/:b:/r/personal/deenu_yh7dc_onmicrosoft_com/Documents/PAD%20Training%20Plan/Power%20Automate%20Desktop%20Training%20-%20Plan%20V1.0.pdf?csf=1&amp;web=1&amp;e=eXHuHb">
+                                Download Full Curriculum (PDF)
+                            </a>
+                                             
+                                            </div>
+
+                       
+
+                    </div>
+                </div>                
+               
             </div>
         </div>
     </section>
 
-    <!-- Program Info -->
-    <section class="program-info">
+    <!-- Why Power Automate Desktop -->
+    <section class="why-pad" id="why-pad">
         <div class="container">
-            <h2 class="section-title scroll-reveal">Program Overview</h2>
-            <div class="info-grid">
-                <div class="info-card scroll-reveal">
-                    <h3>🚀 What You'll Learn</h3>
-                    <p>Master Robotic Process Automation (RPA) with Power Automate Desktop. From basic concepts to advanced AI integration, build real-world automation solutions.</p>
-                </div>
-                <div class="info-card scroll-reveal">
-                    <h3>👨‍🏫 Expert Instructor</h3>
-                    <p>Learn from Deenuji Loganathan, a certified PAD expert and top community champion with proven expertise in enterprise automation.</p>
-                </div>
-                <div class="info-card scroll-reveal">
-                    <h3>🎯 Practical Focus</h3>
-                    <p>Hands-on assignments, real-time use cases, and practical skills that you can immediately apply in your workplace.</p>
-                </div>
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Why Choose Power Automate Desktop?</h2>
+                <p class="section-subtitle">Current market leader in RPA with unmatched advantages for businesses</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Modules -->
-    <section class="modules">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">Module Curriculum</h2>
-            <div class="modules-grid">
-                <div class="module-card scroll-reveal">
-                    <div class="module-number">1</div>
-                    <h3 class="module-title">Introduction to Power Automate Desktop</h3>
-                    <ul class="module-topics">
-                        <li>Overview of Robotic Process Automation (RPA)</li>
-                        <li>Introduction to Power Automate Desktop (PAD)</li>
-                        <li>Use cases for business automation</li>
-                        <li>Installing PAD & machine registration</li>
-                        <li>Creating your first Desktop Flow</li>
-                    </ul>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card scroll-reveal">
+                    <h3 class="advantage-title">Microsoft Ecosystem Advantage</h3>
+                    <p class="advantage-text">Seamlessly integrates with Microsoft 365, Outlook, Excel, Teams & Azure — tools you already use daily in your organization!</p>
                 </div>
-
-                <div class="module-card scroll-reveal">
-                    <div class="module-number">2</div>
-                    <h3 class="module-title">Core Concepts: Variables, Conditions, and Loops</h3>
-                    <ul class="module-topics">
-                        <li>Working with Variables and Lists</li>
-                        <li>Set, truncate, randomize, and manage list variables</li>
-                        <li>Conditional Logic (If, Else If, Switch/Case)</li>
-                        <li>File/Process check</li>
-                        <li>Looping Techniques (For, While, Do-While, Break and Continue)</li>
-                    </ul>
-                </div>
-
-                <div class="module-card scroll-reveal">
-                    <div class="module-number">3</div>
-                    <h3 class="module-title">Text, Date, File & Excel Automation</h3>
-                    <ul class="module-topics">
-                        <li>Text Actions (Find, Replace, Split, Extract, Concatenate)</li>
-                        <li>Date and Time Actions (Get, Format, Convert Timezones)</li>
-                        <li>File & Folder Automation (Read, Write, Move, Delete, Compress)</li>
-                        <li>Excel Automation (Read, Write, Append, Replace, Lookup)</li>
-                    </ul>
-                </div>
-
-                <div class="module-card scroll-reveal">
-                    <div class="module-number">4</div>
-                    <h3 class="module-title">Web, UI, Outlook & PDF Automation</h3>
-                    <ul class="module-topics">
-                        <li>Web Automation (Launch browser, click/type/extract, handle selectors)</li>
-                        <li>UI Automation (Interact with desktop apps via UI elements)</li>
-                        <li>Outlook Automation (Send emails, save attachments, manage inbox)</li>
-                        <li>PDF Automation (Read/extract text, merge/split PDFs)</li>
-                    </ul>
-                </div>
-
-                <div class="module-card scroll-reveal">
-                    <div class="module-number">5</div>
-                    <h3 class="module-title">Advanced Topics: AI, Cloud, and Work Queues</h3>
-                    <ul class="module-topics">
-                        <li>OneDrive integration</li>
-                        <li>AI Builder actions (GPT capabilities)</li>
-                        <li>Work Queue implementation & task prioritization</li>
-                        <li>PAD Copilot overview and capabilities</li>
-                        <li>Machine registration & managing machine pools</li>
-                        <li>Attended vs. Unattended bots</li>
-                    </ul>
-                </div>
-
-                <div class="module-card scroll-reveal">
-                    <div class="module-number">6</div>
-                    <h3 class="module-title">Power Fx, Monitoring & Use Case Building</h3>
-                    <ul class="module-topics">
-                        <li>Cloud Flows & triggers</li>
-                        <li>Monitor desktop flow runs and logging</li>
-                        <li>PAD Licensing breakdown</li>
-                        <li>Hosted machines: setup & licensing</li>
-                        <li>Build real-time RPA use cases</li>
-                        <li>Power Fx-enabled Flows – low-code automation logic</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learning Method -->
-    <section class="learning-method">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">🎓 How You'll Learn</h2>
-            <div class="method-grid">
-                <div class="method-item scroll-reveal">
-                    <div class="method-icon">📺</div>
-                    <h3>Live Sessions</h3>
-                    <p>Every Sat & Sun<br>3PM – 4:30PM IST</p>
-                </div>
-                <div class="method-item scroll-reveal">
-                    <div class="method-icon">📝</div>
-                    <h3>Hands-on Assignments</h3>
-                    <p>Weekly practical tasks to reinforce learning</p>
-                </div>
-                <div class="method-item scroll-reveal">
-                    <div class="method-icon">🕐</div>
-                    <h3>Office Hours</h3>
-                    <p>Optional support every Wednesday</p>
-                </div>
-                <div class="method-item scroll-reveal">
-                    <div class="method-icon">💬</div>
-                    <h3>WhatsApp Support</h3>
-                    <p>Group support from trainer and peers</p>
-                </div>
-                <div class="method-item scroll-reveal">
-                    <div class="method-icon">🎬</div>
-                    <h3>Session Recordings</h3>
-                    <p>Access recordings after each class</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <h2 class="section-title scroll-reveal" style="color:#FFF">💰 Investment & Enrollment</h2>
-            <div class="price-card scroll-reveal">
-                <div class="price">₹22,000</div>
-                <div class="price-details">
-                    <div class="price-item">
-                        <span>Payment Deadline:</span>
-                        <span><strong>August 6, 2025</strong></span>
-                    </div>
-                    <div class="price-item">
-                        <span>Program Starts:</span>
-                        <span><strong>August 9, 2025</strong></span>
-                    </div>
-                    <div class="price-item">
-                        <span>Duration:</span>
-                        <span><strong>6 Weeks</strong></span>
-                    </div>
-                    <div class="price-item">
-                        <span>Live Sessions:</span>
-                        <span><strong>12 Sessions</strong></span>
-                    </div>
-                </div>
-                <a href="https://topmate.io/deenuji_loganathan/1647144" target="_blank" class="cta-button" style="display: inline-block; margin-top: 2rem; font-size: 1.2rem; padding: 15px 30px;">🚀 Enroll Now on Topmate</a>
                 
-                 <div style="margin-top: 2rem;">
-                    <a href="https://yh7dc-my.sharepoint.com/:b:/r/personal/deenu_yh7dc_onmicrosoft_com/Documents/PAD%20Training%20Plan/Power%20Automate%20Desktop%20Training%20-%20Plan%20V1.0.pdf?csf=1&web=1&e=NuSes2" 
-                       class="cta-button" 
-                       style="display: inline-block; background: linear-gradient(45deg, #6366f1, #8b5cf6); font-size: 1rem; padding: 12px 24px; margin: 0 10px;"
-                       download>
-                        📄 Download Detailed Syllabus
+                <div class="advantage-card scroll-reveal">
+                    <h3 class="advantage-title">Cost-Effective Solution</h3>
+                    <p class="advantage-text">PAD offers one of the most affordable RPA licenses in the market — often up to 50% lower cost than competitive tools.</p>
+                </div>
+                
+                <div class="advantage-card scroll-reveal">
+                    <h3 class="advantage-title">Low-Code Friendly</h3>
+                    <p class="advantage-text">Designed for citizen developers and business users with intuitive UI and powerful recorder features for rapid automation.</p>
+                </div>
+                
+                <div class="advantage-card scroll-reveal">
+                    <h3 class="advantage-title">Powerful Desktop Automation</h3>
+                    <p class="advantage-text">Unlike cloud-only tools, PAD is specifically optimized for automating legacy applications and complex desktop tasks.</p>
+                </div>
+                
+                <div class="advantage-card scroll-reveal">
+                    <h3 class="advantage-title">Perfect for All Skill Levels</h3>
+                    <p class="advantage-text">Whether you're a beginner starting your automation journey or a professional expanding skills, PAD offers flexibility and scalability.</p>
+                </div>
+                
+                <div class="advantage-card scroll-reveal">
+                    <h3 class="advantage-title">Strong Community Support</h3>
+                    <p class="advantage-text">Backed by an active global community, rich learning resources, and continuous innovation backed by Microsoft's investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Curriculum Section -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Comprehensive 6-Module Curriculum</h2>
+                <p class="section-subtitle">Structured learning path from RPA fundamentals to advanced enterprise automation</p>
+            </div>
+            
+            <div class="curriculum-grid">
+                <!-- Module 1: Introduction -->
+                <div class="module-card scroll-reveal">
+                    <div class="module-header">
+                        <div class="module-number">1</div>
+                        <h3 class="module-title">Introduction to Power Automate Desktop</h3>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">RPA Fundamentals</div>
+                        <ul class="topic-items">
+                            <li>Overview of Robotic Process Automation (RPA) and its benefits</li>
+                            <li>Introduction to Power Automate Desktop: features and capabilities</li>
+                            <li>Use cases of Power Automate Desktop in business automation workflows</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Installation & Setup</div>
+                        <ul class="topic-items">
+                            <li>System requirements for installing Power Automate Desktop</li>
+                            <li>Step-by-step installation process</li>
+                            <li>Configuration and setup post-installation</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">First Desktop Flow</div>
+                        <ul class="topic-items">
+                            <li>Understanding flow design concepts</li>
+                            <li>Adding actions to create a basic automation flow</li>
+                            <li>Save and Run flows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 2: Core Concepts -->
+                <div class="module-card scroll-reveal">
+                    <div class="module-header">
+                        <div class="module-number">2</div>
+                        <h3 class="module-title">Core Concepts: Variables, Conditions, and Loops</h3>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Variable Actions</div>
+                        <ul class="topic-items">
+                            <li>Set Variable: assigning values to variables</li>
+                            <li>Truncate Number: adjust Number precision</li>
+                            <li>Get Random Numbers: generate Random values</li>
+                            <li>Increase/Decrease Variable: adjust numeric values</li>
+                            <li>Create New List: initialize a List Variable</li>
+                            <li>Add/Remove Item From List: manipulate List contents</li>
+                            <li>Clear List: empty List content</li>
+                            <li>Remove Duplicate items From List: clean up List data</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Conditional Actions</div>
+                        <ul class="topic-items">
+                            <li>If and Else: basic branching logic</li>
+                            <li>Else If: additional conditions</li>
+                            <li>Switch and Case: multi-branch decision-making</li>
+                            <li>Default Case: fallback option</li>
+                            <li>If File/Folder Exists: check File or Folder presence</li>
+                            <li>If Process: verify running processes</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Loop Operations</div>
+                        <ul class="topic-items">
+                            <li>For Loop: iterate a fixed Number of times</li>
+                            <li>While Loop: repeat until a condition is met</li>
+                            <li>Do-While Loop: execute at least once</li>
+                            <li>Break and Continue: control Loop execution flow</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 3: Data Processing -->
+                <div class="module-card scroll-reveal">
+                    <div class="module-header">
+                        <div class="module-number">3</div>
+                        <h3 class="module-title">Text, Date, File & Excel Automation</h3>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Text Processing</div>
+                        <ul class="topic-items">
+                            <li>Find/Replace/Extract/Concatenate/Split Text: manipulate text</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Date and Time Operations</div>
+                        <ul class="topic-items">
+                            <li>Get Current Date and Time: retrieve system time</li>
+                            <li>Format Date and Time: adjust date/time display</li>
+                            <li>Convert Time Zones: manage time zone conversions</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">File Management</div>
+                        <ul class="topic-items">
+                            <li>Create/Read/Write/Append to File: basic file operations</li>
+                            <li>Copy/Move/Rename/Delete File: manage file system</li>
+                            <li>Create/Delete/Copy/Move/Rename Folder: organize directories</li>
+                            <li>Zip Files/Unzip Files: archive and extract file collections</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Excel Automation & Recording</div>
+                        <ul class="topic-items">
+                            <li>Read Excel File: retrieve data From Excel</li>
+                            <li>Write/Append to Excel: update or Add data</li>
+                            <li>Find and Replace: search and modify data in Excel</li>
+                            <li>Record/Play/Pause Recorded Web and Desktop Actions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 4: Application Automation -->
+                <div class="module-card scroll-reveal">
+                    <div class="module-header">
+                        <div class="module-number">4</div>
+                        <h3 class="module-title">Web, UI, Outlook & PDF Automation</h3>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Web Automation</div>
+                        <ul class="topic-items">
+                            <li>Launch Web browser</li>
+                            <li>Click Element: interact with web elements</li>
+                            <li>Type into Field: input data</li>
+                            <li>Extract Data from Web: scrape web content</li>
+                            <li>UI elements & Selectors with Fallback features</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">UI Automation</div>
+                        <ul class="topic-items">
+                            <li>Click/Input Text/Extract Text/Wait for Element</li>
+                            <li>Automate desktop application interactions</li>
+                            <li>UI elements & Selectors with Fallback features</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Email & Document Processing</div>
+                        <ul class="topic-items">
+                            <li>Create/Send Outlook Email: automate email composition</li>
+                            <li>Save Outlook Email Attachments: archive email data</li>
+                            <li>Manage Email and Save Emails</li>
+                            <li>Read PDF Text: extract text content from PDFs</li>
+                            <li>Extract Data from PDF: parse structured data</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Database Operations</div>
+                        <ul class="topic-items">
+                            <li>Connect to Database</li>
+                            <li>Execute SQL Query</li>
+                            <li>Fetch/Update/Insert/Delete Data</li>
+                            <li>Close Connection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 5: Advanced Features -->
+                <div class="module-card scroll-reveal">
+                    <div class="module-header">
+                        <div class="module-number">5</div>
+                        <h3 class="module-title">Advanced Topics: AI, Cloud & Work Queues</h3>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Cloud Integration</div>
+                        <ul class="topic-items">
+                            <li>List and Create files in OneDrive</li>
+                            <li>Download OneDrive files into local drive</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">AI Builder & Copilot</div>
+                        <ul class="topic-items">
+                            <li>Explore GPT inbuilt actions</li>
+                            <li>Introduction to Copilot: leveraging AI for automation</li>
+                            <li>Benefits and limitations of AI-driven task automation</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Work Queue Management</div>
+                        <ul class="topic-items">
+                            <li>Implementing work queues: managing task assignments</li>
+                            <li>Task prioritization: optimizing workflow efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 6: Enterprise Implementation -->
+                <div class="module-card scroll-reveal">
+                    <div class="module-header">
+                        <div class="module-number">6</div>
+                        <h3 class="module-title">Enterprise Deployment & Monitoring</h3>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Machine Management</div>
+                        <ul class="topic-items">
+                            <li>Registering machines for automation: setting up machines for RPA tasks</li>
+                            <li>Managing machine pools: distributing workload across registered machines</li>
+                            <li>Attended vs Unattended Bots: differences and deployment considerations</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Cloud Flow Integration</div>
+                        <ul class="topic-items">
+                            <li>Overview of Cloud Flows: benefits of cloud-based automation</li>
+                            <li>Invoke desktop flows from cloud flow</li>
+                            <li>Explore types of triggers in cloud flows</li>
+                        </ul>
+                    </div>
+                    <div class="topic-section">
+                        <div class="topic-title">Monitoring & Advanced Topics</div>
+                        <ul class="topic-items">
+                            <li>Monitor Desktop flow runs and logging from cloud portal</li>
+                            <li>Discussion on Power Automate licensing and scenarios</li>
+                            <li>Power Fx Enabled flows with logic-based use cases</li>
+                            <li>Hosted machine setup & understanding required licenses</li>
+                            <li>Build real-time use cases live in session</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-important scroll-reveal">
+                <h4 style="color: #92400e; margin-bottom: 1rem;">📋 What's NOT Covered in This Training</h4>
+                <p style="color: #78350f;">This is a Power Automate Desktop (RPA-focused) training program. There's no deep dive into Power Automate Cloud Flows. The focus remains on desktop automation, AI Builder, and RPA use cases-based learning. Cloud flow concepts will be touched upon only when required for RPA integration. Certification is not included – this is a training-only program.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Experience -->
+    <section class="learning-experience">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">🎓 Premium Learning Experience</h2>
+                <p class="section-subtitle">Practical learning model with hands-on approach and continuous support</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-item scroll-reveal">
+                    <div class="experience-icon">📺</div>
+                    <h3 class="experience-title">Live Interactive Sessions</h3>
+                    <p class="experience-text">Every Saturday & Sunday, 3:00-4:30 PM IST with real-time Q&A and live demonstrations</p>
+                </div>
+                
+                <div class="experience-item scroll-reveal">
+                    <div class="experience-icon">📝</div>
+                    <h3 class="experience-title">Hands-on Assignments</h3>
+                    <p class="experience-text">Real-world use cases in every session with personalized trainer review and feedback</p>
+                </div>
+                
+                <div class="experience-item scroll-reveal">
+                    <div class="experience-icon">🕐</div>
+                    <h3 class="experience-title">Optional Office Hours</h3>
+                    <p class="experience-text">Every Wednesday, 9:30-10:15 PM IST for additional support and doubt clearing</p>
+                </div>
+                
+                <div class="experience-item scroll-reveal">
+                    <div class="experience-icon">💬</div>
+                    <h3 class="experience-title">WhatsApp Community</h3>
+                    <p class="experience-text">Group support from trainer and fellow participants throughout the program</p>
+                </div>
+                
+                <div class="experience-item scroll-reveal">
+                    <div class="experience-icon">🎬</div>
+                    <h3 class="experience-title">Session Recordings</h3>
+                    <p class="experience-text">Access all session recordings for revision and catch-up on missed sessions</p>
+                </div>
+                
+                <div class="experience-item scroll-reveal">
+                    <div class="experience-icon">🔧</div>
+                    <h3 class="experience-title">Premium Access</h3>
+                    <p class="experience-text">Credentials for AI Builder, Office integration, and premium features during training</p>
+                </div>
+            </div>
+
+            <div class="highlight-important" style="margin-top: 3rem;">
+                <h4 style="color: #92400e; margin-bottom: 1rem;">🎯 Practical Learning Approach</h4>
+                <p style="color: #78350f; margin-bottom: 1rem;">In every session, you'll not only learn key concepts but also receive a hands-on use case to work on independently. Once completed, you'll submit your solution to the trainer for personalized review and feedback.</p>
+                <p style="color: #78350f;"><strong>This approach helps you:</strong> Build real-world confidence • Move beyond theory into actual practice • Stay actively involved throughout the course</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title" style="color: white;">📅 Training Schedule</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Structured 6-week program starting August 9, 2025</p>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item scroll-reveal">
+                    <div class="schedule-icon">📅</div>
+                    <h3 class="schedule-title">Duration</h3>
+                    <p class="schedule-text">6 Weeks<br>Starting August 9, 2025</p>
+                </div>
+                
+                <div class="schedule-item scroll-reveal">
+                    <div class="schedule-icon">🗓️</div>
+                    <h3 class="schedule-title">Live Sessions</h3>
+                    <p class="schedule-text">Saturdays & Sundays<br>3:00 PM - 4:30 PM IST</p>
+                </div>
+                
+                <div class="schedule-item scroll-reveal">
+                    <div class="schedule-icon">🕘</div>
+                    <h3 class="schedule-title">Office Hours</h3>
+                    <p class="schedule-text">Optional Support<br>Wednesdays 9:30-10:15 PM IST</p>
+                </div>
+                
+                <div class="schedule-item scroll-reveal">
+                    <div class="schedule-icon">📱</div>
+                    <h3 class="schedule-title">WhatsApp Support</h3>
+                    <p class="schedule-text">Community Support<br>From trainer & peers</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;"><strong>Note:</strong> While we have a well-structured course plan, the exact timeline may slightly vary based on the pace and engagement of trainees. All topics will be covered in full - even if it requires extending the timeline by an additional week or two.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Options Section -->
+    <section class="payment-options" id="pricing">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">💰 Choose Your Payment Method</h2>
+                <p class="section-subtitle">Flexible payment options to suit your preference</p>
+            </div>
+            
+            <div class="payment-comparison">
+                <div class="payment-option scroll-reveal">
+                    <div class="recommended-badge">💰 SAVE ₹2,000</div>
+                    <h3 class="option-title">Direct Payment</h3>
+                    <div class="option-price">₹20,000</div>
+                    <ul class="option-features">
+                        <li>Direct UPI or Bank Transfer</li>
+                        <li>No additional processing fees</li>
+                        <li>Instant confirmation via WhatsApp</li>
+                        <li>Personal payment support</li>
+                        <li>Quick enrollment process</li>
+                        <li>Same training benefits</li>
+                    </ul>
+                    <a href="https://wa.me/+918618169205?text=Hi%20Deenu%2C%20I%27m%20interested%20in%20the%20Power%20Automate%20Desktop%20training%20program.%20I%27d%20like%20to%20pay%20via%20UPI%2FBank%20transfer.%20Please%20share%20the%20payment%20details." target="_blank" class="option-button whatsapp-button">
+                        📱 WhatsApp for Payment Details
                     </a>
                 </div>
                 
-                <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
-                    *Focus on Power Automate Desktop (PAD) - practical, real-world automation skills
-                </p>
+                <div class="payment-option scroll-reveal">
+                    <h3 class="option-title">Topmate Platform</h3>
+                    <div class="option-price">₹22,000</div>
+                    <ul class="option-features">
+                        <li>Pay through Topmate platform</li>
+                        <li>Additional ₹2,000 for taxes & fees</li>
+                        <li>Automated booking system</li>
+                        <li>Platform processing fees included</li>
+                        <li>Digital receipt & invoice</li>
+                        <li>Same training benefits</li>
+                    </ul>
+                    <a href="https://topmate.io/deenuji_loganathan/1647144" class="option-button topmate-button" target="_blank">
+                        🌐 Book via Topmate
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title scroll-reveal">📞 Contact & Trainer Info</h2>
-            <div class="trainer-card scroll-reveal">
-                <h3 style="color: #6366f1; font-size: 1.5rem; margin-bottom: 1rem;">Deenuji Loganathan</h3>
-                <p style="margin-bottom: 1.5rem;">Top Power Automate Desktop Community Champion & Certified PAD Expert</p>
-                <div class="contact-links">
-                    <a href="mailto:automatewithdeenu@gmail.com" target="_blank" class="contact-link">📧 Email</a>
-                    <a href="https://www.linkedin.com/in/deenuji/" target="_blank" class="contact-link">🔗 LinkedIn</a>
-                    <a href="https://www.youtube.com/@automatewithdeenu" target="_blank" class="contact-link">📺 YouTube</a>
+            <div class="highlight-important scroll-reveal" style="margin-top: 3rem;">
+                <h4 style="color: #92400e; margin-bottom: 1rem;">💡 Why Choose Direct Payment?</h4>
+                <p style="color: #78350f; margin-bottom: 1rem;"><strong>Save ₹2,000:</strong> Direct UPI/Bank transfer eliminates platform fees and taxes, giving you the same premium training at a lower cost.</p>
+                <p style="color: #78350f;"><strong>Personal Touch:</strong> Direct communication via WhatsApp ensures faster support, immediate payment confirmation, and personalized assistance throughout your enrollment process.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h4 style="color: #1e293b; margin-bottom: 1rem;">📞 Need Help Choosing?</h4>
+                <p style="color: #64748b; margin-bottom: 1.5rem;">Contact Deenu directly to discuss payment options and get personalized assistance</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/+918618169205?text=Hi%20Deenu%2C%20I%20need%20help%20choosing%20the%20right%20payment%20option%20for%20the%20PAD%20training.%20Can%20you%20guide%20me%3F" class="contact-link whatsapp-link">📱 WhatsApp: +91 86181 69205</a>
+                    <a href="mailto:automatewithdeenu@gmail.com?subject=PAD Training Payment Query" class="contact-link">📧 Email Support</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Terms & Conditions -->
+    <section class="terms-section">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">📋 Training Terms & Conditions</h2>
+                <p class="section-subtitle">Please review these important guidelines for a smooth learning experience</p>
+            </div>
+            
+            <div class="terms-grid">
+                <div class="terms-card scroll-reveal">
+                    <h4 class="terms-title">🎯 Attendance & Participation</h4>
+                    <ul class="terms-list">
+                        <li>Regular attendance is crucial for keeping up with course flow</li>
+                        <li>Active participation and focus during live sessions essential</li>
+                        <li>Please avoid multitasking to ensure maximum learning</li>
+                        <li>Missed sessions: watch recorded sessions to stay updated</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-card scroll-reveal">
+                    <h4 class="terms-title">📝 Assignments & Responsibilities</h4>
+                    <ul class="terms-list">
+                        <li>Complete all assigned use cases within provided timeline</li>
+                        <li>Submit solutions to trainer for personalized feedback</li>
+                        <li>No additional live sessions for missed classes</li>
+                        <li>Trainer availability communicated in advance for emergencies</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-card scroll-reveal">
+                    <h4 class="terms-title">💰 Payment & Refund Policy</h4>
+                    <ul class="terms-list">
+                        <li><strong>No Refund Policy:</strong> Once course fee is paid, no refunds issued</li>
+                        <li>No refunds for missed sessions or personal schedule conflicts</li>
+                        <li>Payment confirmation required for access to sessions</li>
+                        <li>Limited seats available - first come, first served</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Process -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title" style="color: white;">💳 How to Make Payment & Next Steps</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Simple enrollment process to secure your seat</p>
+            </div>
+            
+            <div class="payment-steps">
+                <div class="payment-step scroll-reveal">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Contact via WhatsApp</h3>
+                    <p class="step-text">Message +91 99528 93080 to get UPI ID and bank account details for direct transfer. Save ₹2,000 compared to Topmate!</p>
+                </div>
+                
+                <div class="payment-step scroll-reveal">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Make Payment</h3>
+                    <p class="step-text">Transfer ₹20,000 via UPI or bank transfer by August 6th. Take a screenshot of the payment confirmation.</p>
+                </div>
+                
+                <div class="payment-step scroll-reveal">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Share Payment Proof</h3>
+                    <p class="step-text">Send payment screenshot via WhatsApp for instant enrollment confirmation and access to training materials.</p>
+                </div>
+                
+                <div class="payment-step scroll-reveal">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Training Begins</h3>
+                    <p class="step-text">Join WhatsApp group, receive meeting links, get premium tool credentials, and attend first session on August 9, 2025!</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                <h4 style="color: white; margin-bottom: 1rem;">📱 Ready to Start? Contact Now!</h4>
+                <a href="https://wa.me/+918618169205?text=Hi%20Deenu%2C%20I%27m%20ready%20to%20enroll%20in%20the%20Power%20Automate%20Desktop%20training%20program.%20Please%20share%20the%20UPI%2FBank%20transfer%20details%20for%20%E2%82%B920%2C000%20payment." style="display: inline-block; padding: 15px 30px; background: #25D366; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 1.1rem; margin: 0.5rem;">
+                    💬 WhatsApp: +91 86181 69205
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Trainer Section -->
+        <section class="trainer-section" id="trainer">
+            <div class="container">
+                <div class="trainer-content scroll-reveal">
+                    <div class="trainer-image-section">
+                       
+                    </div>
+                    
+                    <div class="trainer-details">
+                        <h3>About Trainer - Deenuji Loganathan</h3>
+                        <p class="trainer-title"> Power Automate Desktop Architect & Community Champion</p>
+                        
+                        <div class="trainer-bio">
+                            <p>With 13+ years of comprehensive IT experience and 6+ specialized years in RPA, Deenuji brings unparalleled expertise to Power Automate Desktop training. As a recognized community leader, he has mentored over 50 professionals and contributed 270+ solutions to the PAD community.</p>
+                        </div>
+                        
+                        <ul class="trainer-achievements">
+                            <li>13+ years of experience in IT and 6+ years specialized in RPA</li>
+                            <li>Recognized as Super User for 3 consecutive seasons in Power Platform Community</li>
+                            <li>Holds Community Champion rank in the PAD Community</li>
+                            <li>Top-listed solution provider with 270+ shared solutions</li>
+                            <li>Certified in Power Automate Desktop (PL-500), Power Platform (PL-900)</li>
+                            <li>Certified in Automation Anywhere and UiPath</li>
+                            <li>Published multiple articles in Power Platform Community</li>
+                            <li>Regular speaker at Power Platform Weekly Forums</li>
+                           
+                        </ul>
+                        
+                        <div class="contact-links">
+                            <a href="mailto:automatewithdeenu@gmail.com" target="_blank" class="contact-link">📧 Email</a>
+                            <a href="https://wa.me/+918618169205?text=Hi%20Deenu%2C%20I%27m%20interested%20in%20the%20Power%20Automate%20Desktop%20training%20program.%20Could%20you%20please%20share%20more%20details%3F" target="_blank" class="contact-link whatsapp-link">📱 WhatsApp</a>
+                            <a href="https://www.linkedin.com/in/deenuji/" class="contact-link" target="_blank">🔗 LinkedIn</a>
+                            <a href="https://www.youtube.com/@automatewithdeenu" class="contact-link" target="_blank">📺 YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 automatewithdeenu - Power Automate Desktop Training Program</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>📧 automatewithdeenu@gmail.com</p>
+                    <p>🔗 <a href="https://www.linkedin.com/in/deenuji/" target="_blank">LinkedIn Profile</a></p>
+                    <p>📺 <a href="https://www.youtube.com/@automatewithdeenu" target="_blank">YouTube Channel</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Program Details</h4>
+                    <p>Duration: 6 Weeks Intensive Training</p>
+                    <p>Schedule: Sat & Sun, 3:00-4:30 PM IST</p>
+                    <p>Investment: ₹20,000 (Limited Seats)</p>
+                    <p>Starts: August 9, 2025</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About Trainer</h4>
+                    <p>Deenuji Loganathan</p>
+                    <p>PAD Community Champion</p>
+                    <p>13+ Years IT Experience</p>
+                    <p>270+ Community Solutions</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a target="_blank" href="https://yh7dc-my.sharepoint.com/:b:/r/personal/deenu_yh7dc_onmicrosoft_com/Documents/PAD%20Training%20Plan/Power%20Automate%20Desktop%20Training%20-%20Plan%20V1.0.pdf?csf=1&web=1&e=eXHuHb" download>Download Syllabus</a></p>
+                    <p><a href="#pricing">Enrollment Details</a></p>
+                    <p><a href="#trainer">Trainer Profile</a></p>
+                    <p><a href="#curriculum">Course Curriculum</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AutomateWithDeenu - Professional Power Automate Desktop Training by Deenuji Loganathan</p>
+            </div>
         </div>
     </footer>
 
@@ -665,15 +1633,28 @@
             });
         });
 
-        // Add some interactive hover effects
-        document.querySelectorAll('.module-card').forEach(card => {
+        // Add interactive hover effects
+        document.querySelectorAll('.module-card, .advantage-card, .experience-item').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) rotateX(5deg)';
+                this.style.transform = 'translateY(-8px)';
             });
             
             card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) rotateX(0)';
+                this.style.transform = 'translateY(0)';
             });
+        });
+
+        // Update pricing button with current price
+        document.querySelectorAll('.cta-button').forEach(button => {
+            if (button.textContent.includes('Enroll Now')) {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            }
         });
     </script>
 </body>
