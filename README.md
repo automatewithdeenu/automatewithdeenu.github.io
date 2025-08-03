@@ -15,9 +15,6 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - Installing PAD & machine registration
 - Creating your first Desktop Flow
 
-</div>
-
-<div class="panel">
 
 ### Module 2 – Core Concepts: Variables, Conditions, and Loops
 
@@ -28,9 +25,6 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - Looping Techniques  
   - For, While, Do-While, Break and Continue
 
-</div>
-
-<div class="panel">
 
 ### Module 3 – Text, Date, File & Excel Automation
 
@@ -43,9 +37,6 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - Excel Automation  
   - Read, Write, Append, Replace, Lookup in Excel
 
-</div>
-
-<div class="panel">
 
 ### Module 4 – Web, UI, Outlook & PDF Automation
 
@@ -58,9 +49,6 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - PDF Automation  
   - Read/extract text, merge/split PDFs
 
-</div>
-
-<div class="panel">
 
 ### Module 5 – Advanced Topics: AI, Cloud, and Work Queues
 
@@ -71,9 +59,7 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - Machine registration & managing machine pools  
 - Attended vs. Unattended bots
 
-</div>
 
-<div class="panel">
 
 ### Module 6 – Power Fx, Monitoring & Use Case Building
 
@@ -84,9 +70,7 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - Build real-time RPA use cases  
 - Power Fx-enabled Flows – low-code automation logic
 
-</div>
 
----
 
 ## 🎓 Learning Method
 
@@ -96,7 +80,7 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - **WhatsApp Group** for support from trainer and peers
 - **Session Recordings** available after each class  
 
----
+
 
 ## 💰 Payment & Enrollment
 
@@ -104,10 +88,10 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - **Payment deadline**: August 6, 2025  
 - **Live sessions begin**: August 9, 2025
 
-🔗 [🚀 **Enroll Now on Topmate**](https://topmate.io/deenuji_loganathan/1647144)) 
+[🚀 **Enroll Now on Topmate**](https://topmate.io/deenuji_loganathan/1647144)) 
 
 
----
+
 
 ## 📞 Contact
 
@@ -115,6 +99,6 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 📧 automatewithdeenu@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/deenuji/) | 📺 [YouTube](https://www.youtube.com/@automatewithdeenu)
 
----
+
 
 > *This training is focused on Power Automate Desktop (PAD) and does not include certification or full cloud flow deep-dives. You will get practical, real-world automation skills.*
