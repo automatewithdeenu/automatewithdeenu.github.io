@@ -93,7 +93,7 @@ Welcome to the 6-week intensive training on **Power Automate Desktop (PAD)** con
 - **Live Sessions**: Every Sat & Sun, 3PM – 4:30PM IST  
 - **Hands-on Assignments** each week  
 - **Optional Office Hours** every Wednesday  
-- **WhatsApp Group** for ongoing support  
+- **WhatsApp Group** for support from trainer and peers
 - **Session Recordings** available after each class  
 
 ---
