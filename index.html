@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Automate Desktop Training by Deenu | automatewithdeenu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #6366f1;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            opacity: 0.8;
+        }
+
+        /* Program Info */
+        .program-info {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: #6366f1;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Modules Section */
+        .modules {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            padding: 80px 0;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .module-number {
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .module-title {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .module-topics {
+            list-style: none;
+        }
+
+        .module-topics li {
+            padding: 0.3rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .module-topics li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        /* Learning Method */
+        .learning-method {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .method-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .method-item:hover {
+            transform: scale(1.05);
+        }
+
+        .method-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: linear-gradient(135deg, #2d3748, #1a202c);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .price-details {
+            margin: 2rem 0;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Contact */
+        .contact {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .trainer-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            padding: 10px 20px;
+            background: #6366f1;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .method-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Automate With Deenu</div>
+                <a href="https://topmate.io/deenuji_loganathan/1647144" target="_blank" class="cta-button">Enroll Now - ₹22,000</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Master Power Automate Desktop</h1>
+                <p class="subtitle">6-Week Intensive RPA Training Program</p>
+                <p>Learn from <strong>Deenuji Loganathan</strong> - Top PAD Community Champion & Certified Expert</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Weeks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Live Sessions</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Info -->
+    <section class="program-info">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Program Overview</h2>
+            <div class="info-grid">
+                <div class="info-card scroll-reveal">
+                    <h3>🚀 What You'll Learn</h3>
+                    <p>Master Robotic Process Automation (RPA) with Power Automate Desktop. From basic concepts to advanced AI integration, build real-world automation solutions.</p>
+                </div>
+                <div class="info-card scroll-reveal">
+                    <h3>👨‍🏫 Expert Instructor</h3>
+                    <p>Learn from Deenuji Loganathan, a certified PAD expert and top community champion with proven expertise in enterprise automation.</p>
+                </div>
+                <div class="info-card scroll-reveal">
+                    <h3>🎯 Practical Focus</h3>
+                    <p>Hands-on assignments, real-time use cases, and practical skills that you can immediately apply in your workplace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="modules">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">6-Module Curriculum</h2>
+            <div class="modules-grid">
+                <div class="module-card scroll-reveal">
+                    <div class="module-number">1</div>
+                    <h3 class="module-title">Introduction to Power Automate Desktop</h3>
+                    <ul class="module-topics">
+                        <li>Overview of Robotic Process Automation (RPA)</li>
+                        <li>Introduction to Power Automate Desktop (PAD)</li>
+                        <li>Use cases for business automation</li>
+                        <li>Installing PAD & machine registration</li>
+                        <li>Creating your first Desktop Flow</li>
+                    </ul>
+                </div>
+
+                <div class="module-card scroll-reveal">
+                    <div class="module-number">2</div>
+                    <h3 class="module-title">Core Concepts: Variables, Conditions, and Loops</h3>
+                    <ul class="module-topics">
+                        <li>Working with Variables and Lists</li>
+                        <li>Set, truncate, randomize, and manage list variables</li>
+                        <li>Conditional Logic (If, Else If, Switch/Case)</li>
+                        <li>File/Process check</li>
+                        <li>Looping Techniques (For, While, Do-While, Break and Continue)</li>
+                    </ul>
+                </div>
+
+                <div class="module-card scroll-reveal">
+                    <div class="module-number">3</div>
+                    <h3 class="module-title">Text, Date, File & Excel Automation</h3>
+                    <ul class="module-topics">
+                        <li>Text Actions (Find, Replace, Split, Extract, Concatenate)</li>
+                        <li>Date and Time Actions (Get, Format, Convert Timezones)</li>
+                        <li>File & Folder Automation (Read, Write, Move, Delete, Compress)</li>
+                        <li>Excel Automation (Read, Write, Append, Replace, Lookup)</li>
+                    </ul>
+                </div>
+
+                <div class="module-card scroll-reveal">
+                    <div class="module-number">4</div>
+                    <h3 class="module-title">Web, UI, Outlook & PDF Automation</h3>
+                    <ul class="module-topics">
+                        <li>Web Automation (Launch browser, click/type/extract, handle selectors)</li>
+                        <li>UI Automation (Interact with desktop apps via UI elements)</li>
+                        <li>Outlook Automation (Send emails, save attachments, manage inbox)</li>
+                        <li>PDF Automation (Read/extract text, merge/split PDFs)</li>
+                    </ul>
+                </div>
+
+                <div class="module-card scroll-reveal">
+                    <div class="module-number">5</div>
+                    <h3 class="module-title">Advanced Topics: AI, Cloud, and Work Queues</h3>
+                    <ul class="module-topics">
+                        <li>OneDrive integration</li>
+                        <li>AI Builder actions (GPT capabilities)</li>
+                        <li>Work Queue implementation & task prioritization</li>
+                        <li>PAD Copilot overview and capabilities</li>
+                        <li>Machine registration & managing machine pools</li>
+                        <li>Attended vs. Unattended bots</li>
+                    </ul>
+                </div>
+
+                <div class="module-card scroll-reveal">
+                    <div class="module-number">6</div>
+                    <h3 class="module-title">Power Fx, Monitoring & Use Case Building</h3>
+                    <ul class="module-topics">
+                        <li>Cloud Flows & triggers</li>
+                        <li>Monitor desktop flow runs and logging</li>
+                        <li>PAD Licensing breakdown</li>
+                        <li>Hosted machines: setup & licensing</li>
+                        <li>Build real-time RPA use cases</li>
+                        <li>Power Fx-enabled Flows – low-code automation logic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Method -->
+    <section class="learning-method">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">🎓 How You'll Learn</h2>
+            <div class="method-grid">
+                <div class="method-item scroll-reveal">
+                    <div class="method-icon">📺</div>
+                    <h3>Live Sessions</h3>
+                    <p>Every Sat & Sun<br>3PM – 4:30PM IST</p>
+                </div>
+                <div class="method-item scroll-reveal">
+                    <div class="method-icon">📝</div>
+                    <h3>Hands-on Assignments</h3>
+                    <p>Weekly practical tasks to reinforce learning</p>
+                </div>
+                <div class="method-item scroll-reveal">
+                    <div class="method-icon">🕐</div>
+                    <h3>Office Hours</h3>
+                    <p>Optional support every Wednesday</p>
+                </div>
+                <div class="method-item scroll-reveal">
+                    <div class="method-icon">💬</div>
+                    <h3>WhatsApp Support</h3>
+                    <p>Group support from trainer and peers</p>
+                </div>
+                <div class="method-item scroll-reveal">
+                    <div class="method-icon">🎬</div>
+                    <h3>Session Recordings</h3>
+                    <p>Access recordings after each class</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title scroll-reveal" style="color:#FFF">💰 Investment & Enrollment</h2>
+            <div class="price-card scroll-reveal">
+                <div class="price">₹22,000</div>
+                <div class="price-details">
+                    <div class="price-item">
+                        <span>Payment Deadline:</span>
+                        <span><strong>August 6, 2025</strong></span>
+                    </div>
+                    <div class="price-item">
+                        <span>Program Starts:</span>
+                        <span><strong>August 9, 2025</strong></span>
+                    </div>
+                    <div class="price-item">
+                        <span>Duration:</span>
+                        <span><strong>6 Weeks</strong></span>
+                    </div>
+                    <div class="price-item">
+                        <span>Live Sessions:</span>
+                        <span><strong>12 Sessions</strong></span>
+                    </div>
+                </div>
+                <a href="https://topmate.io/deenuji_loganathan/1647144" target="_blank" class="cta-button" style="display: inline-block; margin-top: 2rem; font-size: 1.2rem; padding: 15px 30px;">🚀 Enroll Now on Topmate</a>
+                <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
+                    *Focus on Power Automate Desktop (PAD) - practical, real-world automation skills
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">📞 Contact & Trainer Info</h2>
+            <div class="trainer-card scroll-reveal">
+                <h3 style="color: #6366f1; font-size: 1.5rem; margin-bottom: 1rem;">Deenuji Loganathan</h3>
+                <p style="margin-bottom: 1.5rem;">Top Power Automate Desktop Community Champion & Certified PAD Expert</p>
+                <div class="contact-links">
+                    <a href="mailto:automatewithdeenu@gmail.com" target="_blank" class="contact-link">📧 Email</a>
+                    <a href="https://www.linkedin.com/in/deenuji/" target="_blank" class="contact-link">🔗 LinkedIn</a>
+                    <a href="https://www.youtube.com/@automatewithdeenu" target="_blank" class="contact-link">📺 YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 automatewithdeenu - Power Automate Desktop Training Program</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.module-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) rotateX(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
